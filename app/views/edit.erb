@@ -1,0 +1,26 @@
+<div class="container">
+
+  <h2> Update your listing! </h2>
+
+  <form action="/update" method="post">
+
+    <select class="box" value= <%= @post.category_id %> name="post[category_id]">
+      <% @categories.each do |cat|%>
+        <option value=<%=cat.id%>> 
+            <%= cat.name %>
+        </option> 
+      <% end %>
+    </select>
+    <input class="box" type="text" name="post[title]" value= <%= @post.title %>>
+    <input class="box" type="text" name="post[price]" value= <%= @post.price %>>
+    <textarea cols="40" rows="5" name="post[description]"><%= @post.description %></textarea>
+    <input type="hidden" name="id" value=<%=@post.id%>>
+    <input class="button" type="submit" value="Update">
+  </form>
+  <form action=<%="/#{@post.id}"%> method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input class="delete" type="submit" value="Delete">
+  </form>
+</div>
+
+

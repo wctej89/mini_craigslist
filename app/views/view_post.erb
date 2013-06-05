@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><%= @category.name %></h1>
+  
+  <h2><%="#{@post.title}: $#{@post.price}"%></h2>
+
+  <p><%= @post.description%></p>
+ 
+  <% if @temp_key %>
+    <p>Use this link to edit your post: <a href= <%= "/#{@post.id}/edit?key=#{@temp_key}" %>><%="/#{@post.id}/edit?key=#{@temp_key}"%></a></p>
+  <% end %>
+</div>

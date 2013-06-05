@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h2> Add a new listing! </h2>
+
+  <form action="/new" method="post">
+
+    <select class="box" name="post[category_id]">
+      <% @categories.each do |cat|%>
+      <option value=<%=cat.id%>> <%= cat.name %></option> 
+      <% end %>
+    </select>
+    <input class="box" type="text" name="post[title]" placeholder = "Enter Title">
+    <input class="box" type="text" name="post[price]" placeholder = "Enter Price">
+    <input class="box" type="text" name="post[description]" placeholder = "Enter Description">
+    <input class="box" type="text" name="post[email]" placeholder = "Enter Email">
+    <input class="button" type="submit" value="Submit">
+  </form>
+</div>
